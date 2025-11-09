@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { ScrollListComponent } from './components/scroll-list/scroll-list.component';
 import { CommonModule } from '@angular/common';
-import { DemoModule } from './demo/demo.module';
+import { MockDataService } from './services/mock-data.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    ScrollListComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    DemoModule
+    BrowserAnimationsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [
+    ScrollListComponent
+  ],
+  providers: [
+    MockDataService
+  ]
 })
-export class AppModule { }
+export class DemoModule { }

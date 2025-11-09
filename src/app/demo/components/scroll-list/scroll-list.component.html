@@ -1,0 +1,22 @@
+<div
+  id="scrollContainer"
+  class="d-flex flex-column justify-content-start align-items-center w-100 p-3 pb-5"
+  style="max-height: 7rem; overflow-y: auto"
+  >
+  <!-- (scroll)="handleScroll($event)" -->
+    <ng-container *ngFor="let item of items">
+        <div class="w-100 p-2 bg-light border rounded-sm"  @fadeInOut>
+            {{ item.label }} - {{item.value}}
+        </div>
+    </ng-container>
+
+    <!-- SPINNER -->
+    <ng-container *ngIf="isLoading">
+        <div class="d-flex justify-content-center align-items-center w-100 p-2" @fadeInOut>
+            <div class="spinner-border text-secondary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </ng-container>
+    
+</div>
